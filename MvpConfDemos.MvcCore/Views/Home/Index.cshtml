@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Data atual</h2>
+        <p><b>@ViewBag.DataAtual</b></p>
+    </div>
+</div>
+<div class="row">
+    <a asp-controller="Home" asp-action="GetOrCreateCache">GetOrCreate Cache</a>
+</div>

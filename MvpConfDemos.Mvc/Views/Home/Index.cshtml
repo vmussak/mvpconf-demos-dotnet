@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Oi MVPConf :D</h1>
+
+    <button class="btn btn-primary btn-lg" onclick="ajaxComSession()">
+        Ajax com Session
+    </button>
+
+    <button class="btn btn-primary btn-lg" onclick="ajaxSemSession()">
+        Ajax sem Session
+    </button>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Conteúdo Session</h2>
+        <div id="session">
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h2>Conteúdo sem session</h2>
+        <div id="sessionless">
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function ajaxComSession() {
+        for (var i = 0; i < 20; i++) {
+            $.get("@Url.Action("Index","ComSession")", {
+                index: i
+            }).success(function (data) {
+                $("#session").append(data);
+            });
+        }
+    }
+    function ajaxSemSession() {
+        for (var i = 0; i < 20; i++) {
+            $.get("@Url.Action("Index","SemSession")", {
+                index: i
+            }).success(function (data) {
+                $("#sessionless").append(data);
+            });
+        }
+    }
+</script>
