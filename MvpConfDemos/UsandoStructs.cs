@@ -40,7 +40,8 @@ namespace MvpConfDemos
         }
     }
 
-    public class Sorteio //: IEquatable<Sorteio>
+    //class
+    public struct Sorteio //: IEquatable<Sorteio>
     {
         public int Numero1 { get; set; }
         public int Numero2 { get; set; }
@@ -53,11 +54,6 @@ namespace MvpConfDemos
             return outroSorteio.Numero1 == Numero1 &&
                 outroSorteio.Numero2 == Numero2 &&
                 outroSorteio.Numero3 == Numero3;
-
         }
-
-        //public bool Equals(Sorteio outroSorteio) => outroSorteio.Numero1 == Numero1 &&
-        //        outroSorteio.Numero2 == Numero2 &&
-        //        outroSorteio.Numero3 == Numero3;
     }
 }

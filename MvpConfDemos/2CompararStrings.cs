@@ -8,7 +8,7 @@ namespace MvpConfDemos
 {
     public static class CompararStrings
     {
-        const int _max = 100_000_000;
+        const int _max = 100_000;
         public static void ExecutarIgual()
         {
             Console.WriteLine("## Comecei o CompararComIgual ##");

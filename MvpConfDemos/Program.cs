@@ -14,24 +14,32 @@ namespace MvpConfDemos
             var sw = new Stopwatch();
             sw.Start();
 
-            IteracoesInstancias.VerificarSeEmailValidoRapidao();
+            var database = new Database();
+            var x = database.BuscarClientes2();
 
+            sw.Stop();
 
             Console.WriteLine("Tempo: {0}ms", sw.ElapsedMilliseconds);
-
-           
-
-            //sw.Restart();
-
-            //Listas.PercorrerList();
-
-            //sw.Stop();
-            //Console.WriteLine("Tempo: {0}ms", sw.ElapsedMilliseconds);
-
-
-
-
             Console.ReadKey();
         }
     }
 }
+
+
+//OrdemCondicoesIf.Executar(10, true);
+
+/*
+
+CompararStrings.ExecutarStringCompare();
+CompararStrings.ExecutarRaiz();
+ */
+
+/*
+
+Listas.PercorrerArrayList();
+ */
+
+/*
+IteracoesInstancias.VerificarSeEmailValido();
+IteracoesInstancias.VerificarSeEmailValidoRapidao();
+ */

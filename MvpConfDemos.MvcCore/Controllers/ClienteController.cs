@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MvpConfDemos.MvcCore.Database;
 using System;
 using System.Collections.Generic;
@@ -17,15 +18,10 @@ namespace MvpConfDemos.MvcCore.Controllers
 
         public IActionResult Index()
         {
-            //var clientes = _db.ClienteMvp.ToList().Take(10);
-            var clientes = _db.ClienteMvp.Take(10);
-
-            return Ok(clientes);
-        }
-
-        public IActionResult GetByName(string nome)
-        {
-            var clientes = _db.ClienteMvp.Where(x => x.Nome == nome);
+            var clientes = _db.Cliente.ToList().Take(10);
+            //var clientes = _db.Cliente.Take(10);
+            //var clientes = _db.Cliente.AsNoTracking().Take(10);
+            //var clientes = _db.Cliente.Where(x => x.Nome == "Mussak");
 
             return Ok(clientes);
         }

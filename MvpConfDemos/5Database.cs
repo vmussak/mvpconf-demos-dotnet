@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace MvpConfDemos
 {
@@ -11,7 +12,7 @@ namespace MvpConfDemos
 
         public Database()
         {
-            var connectionString = @"SUA_CONNECTION_STRING_AQUI";
+            var connectionString = @"Server=VINICIUS_MUSSAK\SQLEXPRESS;Database=TESTES;Trusted_Connection=True;";
             _connection = new SqlConnection(connectionString);
         }
 
@@ -19,15 +20,15 @@ namespace MvpConfDemos
         {
             _connection.Open();
 
-            for (int i = 0; i < 10_000_000; i++)
+            for (int i = 0; i < 100_000; i++)
             {
-                new SqlCommand($"INSERT INTO ClienteMvp (Nome, DataNascimento, ClienteEspecial, NomeDaMae, QuantidadeFilhos) VALUES ('Cliente {i}', GETDATE(), {i % 2}, 'Mae {i}', {i.ToString().Substring(0, 1)})", _connection).ExecuteNonQuery();
+                new SqlCommand($"INSERT INTO Cliente (Nome, DataNascimento, ClienteEspecial, NomeDaMae, QuantidadeFilhos) VALUES ('Cliente {i}', GETDATE(), {i % 2}, 'Mae {i}', {i.ToString().Substring(0, 1)})", _connection).ExecuteNonQuery();
             }
         }
 
         public IEnumerable<Cliente> BuscarClientes()
         {
-            var query = "SELECT * FROM ClienteMvp";
+            var query = "SELECT * FROM Cliente";
             var lstCliente = new List<Cliente>();
 
             _connection.Open();
@@ -62,7 +63,7 @@ namespace MvpConfDemos
 
         public IEnumerable<Cliente> BuscarClientes2()
         {
-            var query = "SELECT * FROM ClienteMvp";
+            var query = "SELECT * FROM Cliente";
             var lstCliente = new List<Cliente>();
 
             _connection.Open();

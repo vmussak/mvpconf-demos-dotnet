@@ -9,7 +9,7 @@ namespace MvpConfDemos
         {
             Console.WriteLine("## Comecei ##");
 
-            if(pareceFeliz && VerificaFelicidade(idade))
+            if(pareceFeliz || VerificaFelicidade(idade) )
             {
                 //faz algo aqui
                 Console.WriteLine("Está feliz :D");

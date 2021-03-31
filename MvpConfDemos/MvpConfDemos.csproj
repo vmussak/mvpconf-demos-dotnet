@@ -46,12 +46,11 @@
     <Compile Include="AsyncAwaitClasses.cs" />
     <Compile Include="CafeDaManha.cs" />
     <Compile Include="CafeDaManhaAsync.cs" />
-    <Compile Include="CompararStrings.cs" />
-    <Compile Include="Database.cs" />
-    <Compile Include="IfSwitch.cs" />
-    <Compile Include="IteracoesInstancias.cs" />
-    <Compile Include="Listas.cs" />
-    <Compile Include="OrdemCondicoesIf.cs" />
+    <Compile Include="2CompararStrings.cs" />
+    <Compile Include="5Database.cs" />
+    <Compile Include="4IteracoesInstancias.cs" />
+    <Compile Include="3Listas.cs" />
+    <Compile Include="1OrdemCondicoesIf.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsandoStructs.cs" />

@@ -21,11 +21,6 @@ namespace MvpConfDemos.MvcCore.Controllers
             _cache = cache;
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View("ViewQueNaoExiste");
-        //}
-
         public IActionResult Index()
         {
             //Verifica se existe ou não valor em um cache chamado "DataAtual"

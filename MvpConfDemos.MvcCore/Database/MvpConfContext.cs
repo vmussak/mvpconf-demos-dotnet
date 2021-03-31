@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using MvpConfDemos.MvcCore.Models;
+using System;
 
 namespace MvpConfDemos.MvcCore.Database
 {
@@ -10,6 +12,12 @@ namespace MvpConfDemos.MvcCore.Database
 
         }
 
-        public DbSet<ClienteMvp> ClienteMvp { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.EnableSensitiveDataLogging();
+            optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
+        }
     }
 }
